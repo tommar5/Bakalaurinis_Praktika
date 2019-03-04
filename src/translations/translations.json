@@ -1,0 +1,68 @@
+{
+    "en": {
+        "nav": {
+            "button": {
+                "home": "Home",
+                "exploreMap": "Explore Map",
+                "login": "Login",
+                "register": "Register"
+            }
+        },
+        "footer": {
+            "button": {
+                "language": "Language",
+                "country": "Country",
+                "currency": "Currency"
+            },
+            "label": {
+                "changeLanguage": "Select your language",
+                "changeCountry": "Select your country",
+                "changeCurrency": "Select your currency"
+            }
+        }
+    },
+    "lt": {
+        "nav": {
+            "button": {
+                "home": "Pradžia",
+                "exploreMap": "Naršyti žemėlapį",
+                "login": "Prisijungti",
+                "register": "Registruotis"
+            }
+        },
+        "footer": {
+            "button": {
+                "language": "Kalba",
+                "country": "Šalis",
+                "currency": "Valiuta"
+            },
+            "label": {
+                "changeLanguage": "Pasirinkite savo kalbą",
+                "changeCountry": "Pasirinkite savo šalį",
+                "changeCurrency": "Pasirinkite savo valiutą"
+            }
+        }
+    },
+    "ru": {
+        "nav": {
+            "button": {
+                "home": "Главная",
+                "exploreMap": "Карта",
+                "login": "логин",
+                "register": "зарегистрироваться"
+            }
+        },
+        "footer": {
+            "button": {
+                "language": "Язык",
+                "country": "Страна",
+                "currency": "Валюта"
+            },
+            "label": {
+                "changeLanguage": "Выберите ваш язык",
+                "changeCountry": "Выберите свою страну",
+                "changeCurrency": "Выберите вашу валюту"
+            }
+        }
+    }
+}

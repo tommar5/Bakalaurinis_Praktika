@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import NavigationBar from './components/Layout/Navbar';
 import FooterBar from './components/Layout/Footer';
 
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import './styles/App.css';
 import './components/Layout/Icons';
 
 class App extends Component {
