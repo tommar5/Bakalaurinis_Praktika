@@ -1,0 +1,14 @@
+.header-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    -webkit-transition: opacity 200ms ease-in;
+    height: calc(100vh/3);
+    margin: 0 auto;
+    min-height: 170px;
+    min-width: 1000px;
+    max-height: 480px;
+    max-width: 1440px;
+    width: 100%;
+}

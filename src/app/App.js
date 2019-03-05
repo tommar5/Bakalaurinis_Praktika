@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import NavigationBar from './components/Layout/Navbar';
 import FooterBar from './components/Layout/Footer';
+import Home from './pages/Home/Home'
 
 import logo from '../logo.svg';
-import './styles/App.css';
 import './components/Layout/Icons';
 
 class App extends Component {
@@ -12,20 +12,9 @@ class App extends Component {
     return (
       <div className="App">
         <NavigationBar/>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        
+        <Home />
+
         <FooterBar />
       </div>
     );

@@ -11,7 +11,7 @@ const FooterBar = () => (
     <Container>
         <Row>
             <Col>
-                <Navbar  variant="light" expand="sm" sticky="bottom" style={{borderBottomWidth: 1, borderBottomStyle: "solid", borderBottomColore: "#dadce0" }}>
+                <Navbar  variant="light" expand="sm" fixed="bottom" style={{borderBottomWidth: 1, borderBottomStyle: "solid", borderBottomColore: "#dadce0" }}>
                     <Navbar.Brand href="#home"><b>Go</b>Travel</Navbar.Brand>
                     <Form inline>
                         <ButtonToolbar>
@@ -24,7 +24,7 @@ const FooterBar = () => (
                                     <span> {language.footer.button.language} ·</span>
                                     <span> {language.footer.button.country}</span>
                                     </div>}
-                                id={`dropdown-button-drop-up`}
+                                id={`language-dropdown-button-drop-up`}
                                 key={`up`}
                             >
                                 <Dropdown.Header><b>{language.footer.label.changeLanguage}</b></Dropdown.Header>
@@ -42,7 +42,7 @@ const FooterBar = () => (
                                     <span> {language.footer.button.country} ·</span>
                                     <span> Lithuania</span>
                                     </div>}
-                                id={`dropdown-button-drop-up`}
+                                id={`country-dropdown-button-drop-up`}
                                 key={`up`}
                             >
                                 <Dropdown.Header><b>{language.footer.label.changeCountry}</b></Dropdown.Header>
@@ -60,7 +60,7 @@ const FooterBar = () => (
                                     <span> {language.footer.button.currency} ·</span>
                                     <span> EUR</span>
                                     </div>}
-                                id={`dropdown-button-drop-up`}
+                                id={`currency-dropdown-button-drop-up`}
                                 key={`up`}
                             >
                                 <Dropdown.Header><b>{language.footer.label.changeCurrency}</b></Dropdown.Header>

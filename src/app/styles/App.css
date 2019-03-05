@@ -19,7 +19,7 @@
   color: white;
 }
 
-.App-link {
+.App-link :single-button{
   color: #61dafb;
 }
 
@@ -30,4 +30,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+:single-button { 
+  outline: none
 }
