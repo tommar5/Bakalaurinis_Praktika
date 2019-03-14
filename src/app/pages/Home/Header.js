@@ -6,7 +6,6 @@ import landscape from '../../images/landscape.jpg'
 
 const Header = () => (
     <div>
-        <Image src={landscape} fluid className="header-image"/>
     </div>
 )
 

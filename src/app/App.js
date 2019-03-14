@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import NavigationBar from './components/Layout/Navbar';
+import NavigationBar from './components/Layout/Navbar/Navbar';
 import FooterBar from './components/Layout/Footer/Footer';
 import Home from './pages/Home/Home'
 

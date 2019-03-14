@@ -2,33 +2,84 @@ import React, { Component } from 'react'
 
 import language from '../../../translations/translation'
 
-import { Form, Button } from 'react-bootstrap'
+import LoginForm from './LoginForm'
 
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import Popover from '@material-ui/core/Popover'
+import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
+
+const styles = theme => ({
+    root: {
+      flexGrow: 1,
+    },
+    grow: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginLeft: -12,
+      marginRight: 20,
+    },
+    button: {
+      marginLeft: 10,
+    },
+    typography: {
+      margin: theme.spacing.unit * 2,
+    },
+  });
 class Login extends Component {
+    state = {
+        anchorEl: null,
+      };
+    
+      handleClick = event => {
+        this.setState({
+          anchorEl: event.currentTarget,
+        });
+      };
+    
+      handleClose = () => {
+        this.setState({
+          anchorEl: null,
+        });
+      };
     render() {
-        return (
-            <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+        const { classes } = this.props;
+        const { anchorEl } = this.state;
+        const open = Boolean(anchorEl);
 
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-                <Form.Group controlId="formBasicChecbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form>
+        return (
+            <div>
+                <Button color="inherit" className={classes.button} aria-owns={open ? 'login-popper' : undefined}
+                aria-haspopup="true"
+                onClick={this.handleClick}>Login</Button>
+
+                <Popover
+                id="login-popper"
+                open={open}
+                anchorEl={anchorEl}
+                onClose={this.handleClose}
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+                >
+                <Typography className={classes.typography}>
+                    <LoginForm />
+                </Typography>
+                </Popover>
+            </div>
         );
     }
 }
 
-export default Login;
+Login.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Login);
