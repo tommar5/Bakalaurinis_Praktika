@@ -3,33 +3,26 @@ import React, { Component } from 'react'
 import language from "../../../../translations/translation"
 
 import Language from './LanguageSelect'
+import CountrySelect from './CountrySelect'
+import CurrencySelect from './CurrencySelect'
 
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import Divider from '@material-ui/core/Divider'
+import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
+import Link from '@material-ui/core/Link';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    width: '100%',
   },
   grow: {
     padding: 20,
   },
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing.unit * 2,
-  },
+  spaceBetwenBlocks: {
+      padding: '5px 5px 5px 5px'
+  }
 });
 
 class Footer extends Component {
@@ -37,89 +30,94 @@ class Footer extends Component {
         const { classes } = this.props;
 
         return (
-            <footer>
-                <Grid container spacing={24}>
-                    <Grid item xs={12}>
+            <footer className={classes.root}>
+                <Divider />
+                <Grid container
+                    direction="column"
+                    justify="flex-start"
+                    alignItems="stretch"
+                >
+                    <Grid item>
                         <Grid container
                             direction="row"
                             justify="flex-start"
                             alignItems="flex-start"
                         >
-                            <Typography variant="subtitle1" className={classes.grow}>
-                                <b>Go</b>Travel
-                            </Typography>
-                            <Language />
+                            <Grid item xs></Grid>
+                            <Grid item xs={8}>
+                                <Grid container
+                                    direction="row"
+                                    justify="flex-start"
+                                    alignItems="flex-start"
+                                    spacing={8}
+                                >
+                                    <Grid item xs={12} sm={1}>
+                                        <Typography variant="subtitle1" className={classes.grow}>
+                                            <b>Go</b>Travel
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item xs={12} sm={2}>
+                                        <Language />
+                                    </Grid>
+                                    <Grid item xs={12} sm={2}>
+                                        <CountrySelect />
+                                    </Grid>
+                                    <Grid item xs={12} sm={2}>
+                                        <CurrencySelect />
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid item xs></Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item> 
+                        <Grid container
+                            direction="row"
+                            justify="flex-start"
+                            alignItems="flex-start"
+                        >
+                            <Grid item xs></Grid>
+                            <Grid item xs={8}>
+                                <Divider />
+                                <Grid container
+                                    direction="column"
+                                    justify="flex-start"
+                                    alignItems="stretch"
+                                >
+                                    <Grid item className={classes.spaceBetwenBlocks}>
+                                        <Typography variant="body2" gutterBottom>
+                                            Find the cheapest and best flight for you.
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item xs={12} sm={12} className={classes.spaceBetwenBlocks}>
+                                        <Grid container
+                                        direction="row"
+                                        justify="flex-start"
+                                        alignItems="flex-start"
+                                        >
+                                            <Grid item xs={12} sm={2}>
+                                                <Link href="#" variant="button">
+                                                    {'Privacy & Terms'}
+                                                </Link>
+                                            </Grid>
+                                            <Grid item xs={12} sm={3}>
+                                                <Link href="#" variant="button">
+                                                    {'Help Center and Consumer Information'}
+                                                </Link>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid item className={classes.spaceBetwenBlocks}>
+                                        <Typography variant="body2" gutterBottom>
+                                        Displayed currencies may differ from the currencies used to purchase flights. Learn more.Prices are final prices and include all taxes and fees, including payment fees for the cheapest common payment method (which may differ depending on the provider). Additional charges may apply for other types of payment, luggage, meals, WLAN or other additional services. Prices, availability and travel details are without commitment and may be subject to change or to additional conditions. Please check prices and conditions with the service provider before booking.
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid item xs></Grid>
                         </Grid>
                     </Grid>
                 </Grid>
-                            {/* <Navbar  variant="light" expand="sm" fixed="bottom" style={{borderBottomWidth: 1, borderBottomStyle: "solid", borderBottomColore: "#dadce0" }}>
-                                <Navbar.Brand href="#home"><b>Go</b>Travel</Navbar.Brand>
-                                <Form inline>
-                                    <ButtonToolbar>
-                                        <DropdownButton
-                                            size = "sm"
-                                            drop="up"
-                                            variant="light"
-                                            title={<div style={{float: "left"}}>
-                                                <span> {language.footer.button.language} ·</span>
-                                                <span> {language.footer.button.country}</span>
-                                                </div>}
-                                            id={`language-dropdown-button-drop-up`}
-                                            key={`up`}
-                                        >
-                                            <Dropdown.Header><b>{language.footer.label.changeLanguage}</b></Dropdown.Header>
-                                            <Dropdown.Item eventKey="1">English</Dropdown.Item>
-                                            <Dropdown.Item eventKey="2">Lietuvių</Dropdown.Item>
-                                            <Dropdown.Item eventKey="3">Русский</Dropdown.Item>
-                                        </DropdownButton>
-                                    </ButtonToolbar>
-                                    <ButtonToolbar>
-                                        <DropdownButton
-                                            size = "sm"
-                                            drop="up"
-                                            variant="light"
-                                            title={<div style={{float: "left"}}>
-                                                <span> {language.footer.button.country} ·</span>
-                                                <span> Lithuania</span>
-                                                </div>}
-                                            id={`country-dropdown-button-drop-up`}
-                                            key={`up`}
-                                        >
-                                            <Dropdown.Header><b>{language.footer.label.changeCountry}</b></Dropdown.Header>
-                                            <Dropdown.Item eventKey="1">Lithuania</Dropdown.Item>
-                                            <Dropdown.Item eventKey="2">Latvia</Dropdown.Item>
-                                            <Dropdown.Item eventKey="3">Estonia</Dropdown.Item>
-                                        </DropdownButton>
-                                    </ButtonToolbar>
-                                    <ButtonToolbar>
-                                        <DropdownButton
-                                            size = "sm"
-                                            drop="up"
-                                            variant="light"
-                                            title={<div style={{float: "left"}}>
-                                                <span> {language.footer.button.currency} ·</span>
-                                                <span> EUR</span>
-                                                </div>}
-                                            id={`currency-dropdown-button-drop-up`}
-                                            key={`up`}
-                                        >
-                                            <Dropdown.Header><b>{language.footer.label.changeCurrency}</b></Dropdown.Header>
-                                            <Dropdown.Item eventKey="1">Euro Eur</Dropdown.Item>
-                                            <Dropdown.Item eventKey="2">US Dollar USD</Dropdown.Item>
-                                            <Dropdown.Item eventKey="3">Polish Zloty PLN</Dropdown.Item>
-                                        </DropdownButton>
-                                    </ButtonToolbar>
-                                </Form>
-                            </Navbar>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col lg={12}>
-                        <div style={{float: "left"}}>
-                            <span>Find the cheapest and best flights, hotels and cruises for you.</span>
-                        </div>
-                        </Col>
-                    </Row> */}
             </footer>
         );
     }

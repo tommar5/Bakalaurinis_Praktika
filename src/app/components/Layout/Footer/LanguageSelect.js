@@ -2,32 +2,33 @@ import React, { Component } from 'react'
 
 import language from "../../../../translations/translation"
 
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import OutlinedInput from '@material-ui/core/OutlinedInput'
+import InputLabel from '@material-ui/core/InputLabel'
+import MenuItem from '@material-ui/core/MenuItem'
+import FormControl from '@material-ui/core/FormControl'
+import Select from '@material-ui/core/Select'
+import Translate from '@material-ui/icons/Translate'
 
 const styles = theme => ({
     formControl: {
       margin: theme.spacing.unit,
+      width: '100%',
       minWidth: 120,
+    },
+    selectLabel: {
+        fontSize: 17,
+        position: 'absolute',
+        width: 155,
     },
   });
 
 class LanguageSelect extends Component {
     state = {
-        age: '',
+        lang: '',
     };
-    
-    componentDidMount() {
-        this.setState({
-            labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
-        });
-    }
     
     handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -42,18 +43,21 @@ class LanguageSelect extends Component {
                     ref={ref => {
                     this.InputLabelRef = ref;
                     }}
-                    htmlFor="outlined-age-simple"
+                    htmlFor="outlined-lang-simple"
                 >
-                    Age
+                <Translate style={{height: 17}}/>
+                    <span className={classes.selectLabel}> 
+                    Language · <span style={{color: 'black'}}>English</span>
+                    </span>
                 </InputLabel>
                 <Select
-                    value={this.state.age}
+                    value={this.state.lang}
                     onChange={this.handleChange}
                     input={
                     <OutlinedInput
                         labelWidth={this.state.labelWidth}
-                        name="age"
-                        id="outlined-age-simple"
+                        name="lang"
+                        id="outlined-lang-simple"
                     />
                     }
                 >

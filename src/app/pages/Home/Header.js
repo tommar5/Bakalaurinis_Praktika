@@ -1,12 +1,46 @@
 import React from 'react'
 
-import { Image } from 'react-bootstrap'
-
 import landscape from '../../images/landscape.jpg'
 
-const Header = () => (
-    <div>
-    </div>
-)
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import CardMedia from '@material-ui/core/CardMedia'
 
-export default Header;
+const styles = {
+    card: {
+      marginTop: 50,
+    },
+    media: {
+      height: 320,
+    },
+};
+
+function Header(props) {
+    const { classes } = props;
+    return (
+        <Grid container
+            direction="row"
+            justify="center"
+            alignItems="flex-start"
+            className={classes.card}
+        >
+         <Grid item xs={12} sm={9}>
+            <Card>
+                <CardMedia
+                    className={classes.media}
+                    image={landscape}
+                    title="Contemplative Reptile"
+                />
+            </Card>
+         </Grid>
+        </Grid>
+    );
+}
+
+Header.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
+  export default withStyles(styles)(Header);

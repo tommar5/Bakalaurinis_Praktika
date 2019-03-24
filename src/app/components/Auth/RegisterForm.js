@@ -11,40 +11,45 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
-import InputAdornment from '@material-ui/core/InputAdornment'
 import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import Checkbox from '@material-ui/core/Checkbox'
 import Button from '@material-ui/core/Button'
 
 const styles = theme => ({
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-      },
       root: {
         width: '100%',
         maxWidth: 500,
-        
+      },
+      container: {
+        paddingTop: 10,
+        paddingRight: 10,
+        paddingBottom: 20,
+        paddingLeft: 20,
       },
       textField: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
       },
       margin: {
         margin: theme.spacing.unit,
       },
-      passwordTextField: {
-        flexBasis: 200,
+      passwordIcon: {
+        marginTop: 31,
+        marginBottom: 25, 
+        marginLeft: 'auto', 
+        marginRight: 'auto',
+        display: 'block',
+        padding: 0,
       },
       button: {
           float: 'right',
+          marginRight: 10,
       },
   });
 
 class RegisterForm extends Component {
     state = {
         password: '',
+        confirm: '',
         showPassword: false,
         terms: false,
     };
@@ -59,18 +64,19 @@ class RegisterForm extends Component {
     render() {
         const { classes } = this.props;
         return(
-            <Grid container className={classes.root}>
-                <Grid item xs={12}>
-                    <Typography variant="h6" className={classes.grow} color="grey">
+            <form>
+            <Grid container className={classNames(classes.root, classes.container)}>
+                <Grid xs={12}>
+                    <Typography variant="h6">
                         <b>Go</b>Travel
                     </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid xs={12}>
                     <Typography variant="h4" gutterBottom>
                         Register
                     </Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid xs={12} sm={6}>
                     <TextField
                         id="outlined-first-name"
                         label="First name"
@@ -79,7 +85,7 @@ class RegisterForm extends Component {
                         variant="outlined"
                     />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid xs={12} sm={6}>
                     <TextField
                         id="outlined-last-name"
                         label="Last name"
@@ -92,13 +98,12 @@ class RegisterForm extends Component {
                     <TextField
                         id="outlined-email"
                         label="Email"
-                        className={classes.textField}
-                        fullWidth
                         margin="normal"
                         variant="outlined"
+                        style={{ width: '95%'}}
                     />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid xs={12} sm={5}>
                     <TextField
                     id="outlined-adornment-password"
                     className={classNames(classes.passwordTextField)}
@@ -109,6 +114,8 @@ class RegisterForm extends Component {
                     value={this.state.password}
                     onChange={this.handleChange('password')}
                     />
+                </Grid>
+                <Grid xs={10} sm={5}>
                     <TextField
                     id="outlined-adornment-confirm"
                     className={classNames(classes.passwordTextField)}
@@ -116,20 +123,24 @@ class RegisterForm extends Component {
                     variant="outlined"
                     type={this.state.showPassword ? 'text' : 'password'}
                     label="Confirm"
-                    value={this.state.password}
-                    onChange={this.handleChange('password')}
+                    value={this.state.confirm}
+                    style={{ width: '95%', marginLeft: 10 }}
+                    onChange={this.handleChange('confirm')}
                     />
+                </Grid>
+                <Grid xs={2} sm={2}>
                     <IconButton
                         aria-label="Toggle password visibility"
+                        className={classes.passwordIcon}
                         onClick={this.handleClickShowPassword}
                         >
                         {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
+                </Grid>
                     <Typography variant="body2" gutterBottom>
                     Use 8 or more characters with a mix of letters, numbers & symbols
                     </Typography>
-                </Grid>
-                <Grid item xs={6}>
+                <Grid xs={12} sm={6}>
                     <TextField
                         id="country"
                         label="Country"
@@ -138,7 +149,7 @@ class RegisterForm extends Component {
                         variant="outlined"
                     />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid xs={12} sm={6}>
                     <TextField
                         id="city"
                         label="City"
@@ -147,7 +158,7 @@ class RegisterForm extends Component {
                         variant="outlined"
                     />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid xs={12} sm={6}>
                     <TextField
                         id="address1"
                         label="First address"
@@ -156,7 +167,7 @@ class RegisterForm extends Component {
                         variant="outlined"
                     />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid xs={12} sm={6}>
                     <TextField
                         id="address2"
                         label="Second address"
@@ -183,58 +194,8 @@ class RegisterForm extends Component {
                         Register
                     </Button>
                 </Grid>
-            </Grid>
-            // <Form>
-            //     <Form.Row>
-            //         <Form.Group as={Col} controlId="formGridEmail">
-            //         <Form.Label>Email</Form.Label>
-            //         <Form.Control type="email" placeholder="Enter email" />
-            //         </Form.Group>
-
-            //         <Form.Group as={Col} controlId="formGridPassword">
-            //         <Form.Label>Password</Form.Label>
-            //         <Form.Control type="password" placeholder="Password" />
-            //         </Form.Group>
-            //     </Form.Row>
-
-            //     <Form.Group controlId="formGridAddress1">
-            //         <Form.Label>Address</Form.Label>
-            //         <Form.Control placeholder="1234 Main St" />
-            //     </Form.Group>
-
-            //     <Form.Group controlId="formGridAddress2">
-            //         <Form.Label>Address 2</Form.Label>
-            //         <Form.Control placeholder="Apartment, studio, or floor" />
-            //     </Form.Group>
-
-            //     <Form.Row>
-            //         <Form.Group as={Col} controlId="formGridCity">
-            //         <Form.Label>City</Form.Label>
-            //         <Form.Control />
-            //         </Form.Group>
-
-            //         <Form.Group as={Col} controlId="formGridState">
-            //         <Form.Label>State</Form.Label>
-            //         <Form.Control as="select">
-            //             <option>Choose...</option>
-            //             <option>...</option>
-            //         </Form.Control>
-            //         </Form.Group>
-
-            //         <Form.Group as={Col} controlId="formGridZip">
-            //         <Form.Label>Zip</Form.Label>
-            //         <Form.Control />
-            //         </Form.Group>
-            //     </Form.Row>
-
-            //     <Form.Group id="formGridCheckbox">
-            //         <Form.Check type="checkbox" label="Check me out" />
-            //     </Form.Group>
-
-            //     <Button variant="primary" type="submit">
-            //         Submit
-            //     </Button>
-            // </Form>
+                </Grid>
+            </form>
         );
     }
 }

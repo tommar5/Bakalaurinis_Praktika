@@ -69,9 +69,7 @@ class Login extends Component {
                     horizontal: 'center',
                 }}
                 >
-                <Typography className={classes.typography}>
                     <LoginForm />
-                </Typography>
                 </Popover>
             </div>
         );
