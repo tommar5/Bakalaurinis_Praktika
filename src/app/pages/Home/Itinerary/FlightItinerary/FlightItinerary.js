@@ -22,14 +22,14 @@ class FlightItinerary extends Component {
         const { classes } = this.props;
         return (
             <Grid container direction="row" justify="flex-start" alignItems="flex-start" >
-                <Grid item xs={12} sm={6} className={classes.listPosition}>
+                <Grid item xs={12} className={classes.listPosition}>
                     <TripType />
                     
                     <TravelersCount />
 
                     <ClassType />
                 </Grid>
-                <Grid item xs={12} sm={6} className={classes.listPosition}> 
+                <Grid item xs={12} className={classes.listPosition}> 
                     <Destination />
 
                     <DateOfTravel />

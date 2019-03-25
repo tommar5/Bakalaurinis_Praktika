@@ -16,10 +16,13 @@ const styles = theme => ({
         height: 90,
     },
     card: {
-        bottom: 120,
+        bottom: 100,
         position: 'relative',
         background: '#a9a2d2',
     },
+    cardContent: {
+        paddingTop: 5,
+    }
 });
 
 class ItinerarySearch extends Component{
@@ -33,9 +36,9 @@ class ItinerarySearch extends Component{
             justify="center"
             alignItems="center"
             >
-                <Grid item xs={12} sm={8} className={classes.grid}>
+                <Grid item xs={11} sm={8} className={classes.grid}>
                     <Card className={classes.card}>
-                        <CardContent>
+                        <CardContent className={classes.cardContent}>
                             <FlightItinerary />
                         </CardContent>
                     </Card>
@@ -44,7 +47,7 @@ class ItinerarySearch extends Component{
                     size="medium"
                     color="secondary"
                     aria-label="Add"
-                    style={{bottom: 140, marginLeft: 'auto', marginRight: 'auto', display: 'flex'}}
+                    style={{bottom: 120, marginLeft: 'auto', marginRight: 'auto', display: 'flex'}}
                     >
                         <Search />
                         Search
