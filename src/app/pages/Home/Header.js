@@ -14,6 +14,7 @@ const styles = {
     },
     media: {
       height: 320,
+      borderRadius: 16,
     },
 };
 
@@ -27,13 +28,11 @@ function Header(props) {
             className={classes.card}
         >
          <Grid item xs={12} sm={9}>
-            <Card>
-                <CardMedia
-                    className={classes.media}
-                    image={landscape}
-                    title="Contemplative Reptile"
-                />
-            </Card>
+            <CardMedia
+                className={classes.media}
+                image={landscape}
+                title="Contemplative Reptile"
+            />
          </Grid>
         </Grid>
     );

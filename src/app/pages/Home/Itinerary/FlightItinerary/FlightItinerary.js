@@ -6,6 +6,8 @@ import TravelersCount from './Travelerform/TravelersCount'
 import ClassType from './Travelerform/ClassType'
 import Destination from './DestinationForm/Destination'
 import DateOfTravel from './DestinationForm/DateOfTravel'
+import Departure from './DestinationForm/Departure'
+import SwapHoriz from '@material-ui/icons/SwapHoriz'
 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
@@ -29,10 +31,28 @@ class FlightItinerary extends Component {
 
                     <ClassType />
                 </Grid>
-                <Grid item xs={12} className={classes.listPosition}> 
-                    <Destination />
-
-                    <DateOfTravel />
+                <Grid item xs={12} className={classes.listPosition}>
+                    <Grid container direction="row" justify="flex-start" alignItems="flex-start">
+                        <Grid item xs={12} sm={7}>
+                            <Grid
+                            container
+                            direction="row"
+                            justify="space-between"
+                            alignItems="center"
+                            >
+                                <Grid item xs={12} sm={5}>
+                                    <Departure />
+                                </Grid>
+                                <SwapHoriz />
+                                <Grid item xs={12} sm={5}>
+                                    <Destination />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid item xs={12} sm={5}>
+                            <DateOfTravel />
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
         );

@@ -2,46 +2,46 @@ import React, { Component } from 'react'
 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
-import Typography from '@material-ui/core/Typography'
 import Popover from '@material-ui/core/Popover'
+import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ({
     block: {
         display: 'inline-block',
     },
     blockBorderOnClick: {
-        borderColor: '#3f51b5',
-        borderWidth: 2,
+        outline: 'auto',
     },
     blockBorder: {
-        borderColor: 'rgba(0, 0, 0, 0.23);',
-    }
+        border: '1px solid rgba(0, 0, 0, 0.23)',
+        borderRadius: 0,
+    },
 });
 
-class Destination extends Component {
+class Departure extends Component {
     state = {
         anchorEl: null,
-      };
-    
-      handleClick = event => {
+    };
+
+    handleClick = event => {
         this.setState({
           anchorEl: event.currentTarget,
         });
-      };
+    };
     
-      handleClose = () => {
+    handleClose = () => {
         this.setState({
           anchorEl: null,
         });
-      };
-    
-      render() {
+    };
+
+    render() {
         const { classes } = this.props;
         const { anchorEl } = this.state;
         const open = Boolean(anchorEl);
-    
-        return (
-          <div className={classes.block}>
+
+        return(
+            <div className={classes.block}>
             <div 
             className={open ? classes.blockBorderOnClick : classes.blockBorder}
             onClick={this.handleClick}>
@@ -65,11 +65,11 @@ class Destination extends Component {
             </Popover>
             </div>
         );
-      }
+    }
 }
 
-Destination.propTypes = {
-    classes: PropTypes.object.isRequired,
-}
+Departure.propTypes = {
+    classes: PropTypes.object.isRequired
+};
 
-export default withStyles(styles)(Destination)
+export default withStyles(styles)(Departure)

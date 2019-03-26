@@ -15,7 +15,7 @@ const styles = theme => ({
     root: {
       flexGrow: 1,
     },
-    header: {
+    content: {
         display: 'contents',
     },
 });
@@ -26,12 +26,13 @@ class Home extends Component {
         return (
             <main>
                 <Grid container direction="column" justify="center" alignItems="stretch" >
-                    <Grid >
+                    <Grid item xs={12}>
                         <Header />
                     </Grid>
-                    <Grid >
+                    <Grid item xs={12} className={classes.content}>
                         <ItinerarySearch />
                     </Grid>
+                    <Grid item xs={12} className={classes.content}>
                        <Grid container direction="row" justify="center" alignItems="stretch" >
                         <Grid item xs></Grid>
                             <Grid item xs={4} style={{paddingTop: 15, paddingBottom: 15}}>
@@ -42,6 +43,7 @@ class Home extends Component {
                             </Grid>
                             <Grid item xs></Grid>
                         </Grid>
+                    </Grid>
                 </Grid>
             </main>
         );
