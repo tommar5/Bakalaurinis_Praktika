@@ -4,8 +4,6 @@ import './index.css';
 import App from './app/App';
 import * as serviceWorker from './serviceWorker';
 
-localStorage.setItem("language", "ru");
-
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

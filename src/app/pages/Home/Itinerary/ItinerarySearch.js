@@ -57,7 +57,7 @@ class ItinerarySearch extends Component{
                             className={classes.submitButton}
                             >
                                 <Search />
-                                Search
+                                {language.flightItinerary.searchButton}
                             </Fab>
                         </CardContent>
                     </Card>

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import language from "../../../../translations/translation"
 
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
@@ -26,17 +25,12 @@ const styles = theme => ({
 
 class CurrencySelect extends Component {
     state = {
-        age: '',
+        currency: 'eur',
     };
     
-    componentDidMount() {
-        this.setState({
-            labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
-        });
-    }
-    
     handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ currency: event.target.value });
+    localStorage.setItem("currency", event.target.value);
     };
 
     render() {
@@ -51,26 +45,23 @@ class CurrencySelect extends Component {
                     htmlFor="outlined-age-simple"
                 >
                     <span className={classes.selectLabel}> 
-                    Currency · <span style={{color: 'black'}}>EUR</span>
+                    {language.footer.button.currency}
                     </span>
                 </InputLabel>
                 <Select
-                    value={this.state.age}
+                    value={this.state.currency}
                     onChange={this.handleChange}
                     input={
                     <OutlinedInput
-                        labelWidth={this.state.labelWidth}
+                        labelWidth={70}
                         name="age"
                         id="outlined-age-simple"
                     />
                     }
                 >
-                    <MenuItem value="">
-                    <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value="eur">€ EUR</MenuItem>
+                    <MenuItem value="usd">$ USD</MenuItem>
+                    <MenuItem value="pnd">£ POUND</MenuItem>
                 </Select>
             </FormControl>
         );

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import language from '../../../../../translations/translation'
 import TripType from './Travelerform/TripType'
 import TravelersCount from './Travelerform/TravelersCount'
 import ClassType from './Travelerform/ClassType'

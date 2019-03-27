@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import language from '../../../translations/translation'
+
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
@@ -76,13 +78,13 @@ class LoginForm extends Component {
                         </Grid>
                         <Grid className={classes.marginCenter}>
                             <Typography variant="h4" gutterBottom>
-                                Login
+                                {language.loginForm.title}
                             </Typography>
                         </Grid>
                         <Grid xs={12}>
                             <TextField
                                 id="outlined-name"
-                                label="Name"
+                                label={language.loginForm.name}
                                 fullWidth
                                 margin="normal"
                                 variant="outlined"
@@ -99,7 +101,7 @@ class LoginForm extends Component {
                                             margin = "normal"
                                             variant="outlined"
                                             type={this.state.showPassword ? 'text' : 'password'}
-                                            label="Password"
+                                            label={language.loginForm.password}
                                             value={this.state.password}
                                             onChange={this.handleChangePasswordField('password')}
                                             InputProps={{
@@ -130,13 +132,13 @@ class LoginForm extends Component {
                                         color="primary"
                                         />
                                     }
-                                    label="Remember me"
+                                    label={language.loginForm.rememberBox}
                                 />
                             </FormGroup>
                         </Grid>
                         <Grid xs={12} style={{ width: '100%' }}>
                             <Button variant="contained" size="large" color="primary" className={classes.button}>
-                                Login
+                                {language.loginForm.loginButton}
                             </Button>
                         </Grid>
                     </Grid>

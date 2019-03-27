@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
-import { MuiPickersUtilsProvider, DatePicker, InlineDatePicker } from 'material-ui-pickers'
+import { MuiPickersUtilsProvider, InlineDatePicker } from 'material-ui-pickers'
 import DateFnsUtils from '@date-io/date-fns'
 
 const styles = theme => ({

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import language from '../../../../../../translations/translation'
+
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
 import List from '@material-ui/core/List'
@@ -16,10 +18,10 @@ const styles = theme =>({
 });
 
 const classTypes = [
-    'Economy',
-    'Premium Economy',
-    'Business',
-    'First class',
+    language.flightItinerary.type.economy,
+    language.flightItinerary.type.premium,
+    language.flightItinerary.type.business,
+    language.flightItinerary.type.first,
 ];
 
 class ClassType extends Component {

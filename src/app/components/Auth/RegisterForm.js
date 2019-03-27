@@ -73,13 +73,13 @@ class RegisterForm extends Component {
                 </Grid>
                 <Grid xs={12}>
                     <Typography variant="h4" gutterBottom>
-                        Register
+                        {language.registerForm.title}
                     </Typography>
                 </Grid>
                 <Grid xs={12} sm={6}>
                     <TextField
                         id="outlined-first-name"
-                        label="First name"
+                        label={language.registerForm.firstName}
                         className={classNames(classes.textField, classes.grow)}
                         margin="normal"
                         variant="outlined"
@@ -88,7 +88,7 @@ class RegisterForm extends Component {
                 <Grid xs={12} sm={6}>
                     <TextField
                         id="outlined-last-name"
-                        label="Last name"
+                        label={language.registerForm.lastName}
                         className={classNames(classes.textField, classes.grow)}
                         margin="normal"
                         variant="outlined"
@@ -97,7 +97,7 @@ class RegisterForm extends Component {
                 <Grid item xs={12}>
                     <TextField
                         id="outlined-email"
-                        label="Email"
+                        label={language.registerForm.email}
                         margin="normal"
                         variant="outlined"
                         style={{ width: '95%'}}
@@ -110,7 +110,7 @@ class RegisterForm extends Component {
                     margin = "normal"
                     variant="outlined"
                     type={this.state.showPassword ? 'text' : 'password'}
-                    label="Password"
+                    label={language.registerForm.password}
                     value={this.state.password}
                     onChange={this.handleChange('password')}
                     />
@@ -122,7 +122,7 @@ class RegisterForm extends Component {
                     margin = "normal"
                     variant="outlined"
                     type={this.state.showPassword ? 'text' : 'password'}
-                    label="Confirm"
+                    label={language.registerForm.confirm}
                     value={this.state.confirm}
                     style={{ width: '95%', marginLeft: 10 }}
                     onChange={this.handleChange('confirm')}
@@ -138,12 +138,12 @@ class RegisterForm extends Component {
                     </IconButton>
                 </Grid>
                     <Typography variant="body2" gutterBottom>
-                    Use 8 or more characters with a mix of letters, numbers & symbols
+                        {language.registerForm.passwordTip}
                     </Typography>
                 <Grid xs={12} sm={6}>
                     <TextField
                         id="country"
-                        label="Country"
+                        label={language.registerForm.country}
                         className={classes.textField}
                         margin="normal"
                         variant="outlined"
@@ -152,7 +152,7 @@ class RegisterForm extends Component {
                 <Grid xs={12} sm={6}>
                     <TextField
                         id="city"
-                        label="City"
+                        label={language.registerForm.city}
                         className={classes.textField}
                         margin="normal"
                         variant="outlined"
@@ -161,7 +161,7 @@ class RegisterForm extends Component {
                 <Grid xs={12} sm={6}>
                     <TextField
                         id="address1"
-                        label="First address"
+                        label={language.registerForm.firstAddress}
                         className={classes.textField}
                         margin="normal"
                         variant="outlined"
@@ -170,7 +170,7 @@ class RegisterForm extends Component {
                 <Grid xs={12} sm={6}>
                     <TextField
                         id="address2"
-                        label="Second address"
+                        label={language.registerForm.secondAddress}
                         className={classes.textField}
                         margin="normal"
                         variant="outlined"
@@ -186,12 +186,12 @@ class RegisterForm extends Component {
                             color="primary"
                             />
                         }
-                        label="Accept terms of service"
+                        label={language.registerForm.acceptTerms}
                     />
                 </FormGroup>
                 <Grid xs={12}>
                     <Button variant="contained" size="large" color="primary" className={classes.button}>
-                        Register
+                        {language.registerForm.registerButton}
                     </Button>
                 </Grid>
                 </Grid>

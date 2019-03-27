@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import { Link as RouterLink } from 'react-router-dom'
 
 import language from '../../../../translations/translation'
 
@@ -22,7 +21,6 @@ import Map from '@material-ui/icons/Map'
 import Translate from '@material-ui/icons/Translate'
 import Public from '@material-ui/icons/Public'
 import AttachMoney from '@material-ui/icons/AttachMoney'
-import Link from '@material-ui/core/Link'
 
 const styles = {
     list: {
@@ -63,46 +61,46 @@ class SideMenu extends Component {
                         <ListItemIcon>
                             <AirplanemodeActive />
                         </ListItemIcon>
-                        <ListItemText primary={'Search flights'} />
+                        <ListItemText primary={language.nav.sideNav.flight} />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
                             <Hotel />
                         </ListItemIcon>
-                        <ListItemText primary={'Search hotels'} />
+                        <ListItemText primary={language.nav.sideNav.hotel} />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
                             <Cruise />
                         </ListItemIcon>
-                        <ListItemText primary={'Search cruises'} />
+                        <ListItemText primary={language.nav.sideNav.cruise} />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
                             <Car />
                         </ListItemIcon>
-                        <ListItemText primary={'Car Hire'} />
+                        <ListItemText primary={language.nav.sideNav.carHire} />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
                             <Map />
                         </ListItemIcon>
-                        <ListItemText primary={'Explore map'} />
+                        <ListItemText primary={language.nav.sideNav.map} />
                     </ListItem>
                 </List>
                 <List className={classes.bottom}>
                     <Divider />
                     <ListItem button>
                         <ListItemIcon><Translate /></ListItemIcon>
-                        <ListItemText primary={'Change language'} />
+                        <ListItemText primary={language.nav.sideNav.language} />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon><Public /></ListItemIcon>
-                        <ListItemText primary={'Change country'} />
+                        <ListItemText primary={language.nav.sideNav.country} />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon><AttachMoney /></ListItemIcon>
-                        <ListItemText primary={'chance currency'} />
+                        <ListItemText primary={language.nav.sideNav.currency} />
                     </ListItem>
                 </List>
             </div>

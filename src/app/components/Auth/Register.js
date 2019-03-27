@@ -6,9 +6,7 @@ import RegisterForm from './RegisterForm'
 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
 import Popover from '@material-ui/core/Popover'
-import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
 const styles = theme => ({
@@ -45,7 +43,7 @@ class Register extends Component {
             <div>
                 <Button variant="outlined" color="inherit" className={classes.button} aria-owns={open ? 'register-popper' : undefined}
                 aria-haspopup="true"
-                onClick={this.handleClick}>Register</Button>
+                onClick={this.handleClick}>{language.nav.button.register}</Button>
 
                 <Popover
                     id="register-popper"

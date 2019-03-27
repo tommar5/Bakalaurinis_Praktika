@@ -86,7 +86,7 @@ class Footer extends Component {
                                 >
                                     <Grid item className={classes.spaceBetwenBlocks}>
                                         <Typography variant="body2" gutterBottom>
-                                            Find the cheapest and best flight for you.
+                                            {language.footer.label.textOne}
                                         </Typography>
                                     </Grid>
                                     <Grid item xs={12} sm={12} className={classes.spaceBetwenBlocks}>
@@ -97,19 +97,19 @@ class Footer extends Component {
                                         >
                                             <Grid item xs={12} sm={2}>
                                                 <Link href="#" variant="button">
-                                                    {'Privacy & Terms'}
+                                                    {language.footer.label.terms}
                                                 </Link>
                                             </Grid>
                                             <Grid item xs={12} sm={3}>
                                                 <Link href="#" variant="button">
-                                                    {'Help Center and Consumer Information'}
+                                                    {language.footer.label.helpCenter}
                                                 </Link>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                     <Grid item className={classes.spaceBetwenBlocks}>
                                         <Typography variant="body2" gutterBottom>
-                                        Displayed currencies may differ from the currencies used to purchase flights. Learn more.Prices are final prices and include all taxes and fees, including payment fees for the cheapest common payment method (which may differ depending on the provider). Additional charges may apply for other types of payment, luggage, meals, WLAN or other additional services. Prices, availability and travel details are without commitment and may be subject to change or to additional conditions. Please check prices and conditions with the service provider before booking.
+                                            {language.footer.label.textTwo}
                                         </Typography>
                                     </Grid>
                                 </Grid>

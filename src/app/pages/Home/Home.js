@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-import language from '../../../translations/translation'
-
 import Header from './Header'
 import ItinerarySearch from './Itinerary/ItinerarySearch'
 import TopTravels from './TopTravels'

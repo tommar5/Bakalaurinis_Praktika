@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import language from '../../../../../../translations/translation'
+
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
 import Popover from '@material-ui/core/Popover'
@@ -45,7 +47,7 @@ class Departure extends Component {
             <div 
             className={open ? classes.blockBorderOnClick : classes.blockBorder}
             onClick={this.handleClick}>
-                From where?
+                {language.flightItinerary.departure.label}
             </div>
             <Popover
             id="simple-popper"

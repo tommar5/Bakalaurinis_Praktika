@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import language from "../../../../translations/translation"
 
-import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
@@ -16,7 +15,6 @@ const styles = theme => ({
     formControl: {
       margin: theme.spacing.unit,
       width: '100%',
-      minWidth: 120,
     },
     selectLabel: {
         fontSize: 17,
@@ -27,46 +25,43 @@ const styles = theme => ({
 
 class LanguageSelect extends Component {
     state = {
-        lang: '',
-    };
-    
+        lang: localStorage.getItem("language"),
+    }
+
     handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ lang: event.target.value });
+    localStorage.setItem("language", event.target.value);
+    window.location.reload();
     };
 
     render() {
         const { classes } = this.props;
-
+        const { lang } = this.state;
+        const NowIsSetLang = language.language;
         return (
             <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel
-                    ref={ref => {
-                    this.InputLabelRef = ref;
-                    }}
                     htmlFor="outlined-lang-simple"
                 >
                 <Translate style={{height: 17}}/>
                     <span className={classes.selectLabel}> 
-                    Language · <span style={{color: 'black'}}>English</span>
+                    {language.footer.button.language} · <span style={{color: 'black'}}><span style={{color: 'black'}}>{NowIsSetLang[lang]}</span></span>
                     </span>
                 </InputLabel>
                 <Select
-                    value={this.state.lang}
+                    value={localStorage.getItem("language")}
                     onChange={this.handleChange}
                     input={
                     <OutlinedInput
-                        labelWidth={this.state.labelWidth}
+                        labelWidth={175}
                         name="lang"
                         id="outlined-lang-simple"
                     />
                     }
                 >
-                    <MenuItem value="">
-                    <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value="en">{language.language.en}</MenuItem>
+                    <MenuItem value="lt">{language.language.lt}</MenuItem>
+                    <MenuItem value="ru">{language.language.ru}</MenuItem>
                 </Select>
             </FormControl>
         );

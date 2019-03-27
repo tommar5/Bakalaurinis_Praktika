@@ -7,7 +7,6 @@ import LoginForm from './LoginForm'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Popover from '@material-ui/core/Popover'
-import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
 const styles = theme => ({
@@ -53,7 +52,7 @@ class Login extends Component {
             <div>
                 <Button color="inherit" className={classes.button} aria-owns={open ? 'login-popper' : undefined}
                 aria-haspopup="true"
-                onClick={this.handleClick}>Login</Button>
+                onClick={this.handleClick}>{language.nav.button.login}</Button>
 
                 <Popover
                 id="login-popper"

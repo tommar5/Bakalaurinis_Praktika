@@ -1,11 +1,26 @@
 {
     "en": {
+        "language": {
+            "en": "English",
+            "lt": "Lietuviu",
+            "ru": "Русский"
+        },
         "nav": {
             "button": {
                 "home": "Home",
                 "exploreMap": "Explore Map",
                 "login": "Login",
                 "register": "Register"
+            },
+            "sideNav": {
+                "flight": "Search flights",
+                "hotel": "Search hotels",
+                "cruise": "Search cruises",
+                "carHire": "Car Hire",
+                "map": "Explore map",
+                "language": "Change language",
+                "country": "Change country",
+                "currency": "Chance currency"
             }
         },
         "footer": {
@@ -14,20 +29,97 @@
                 "country": "Country",
                 "currency": "Currency"
             },
+            "countrySelect": {
+                "lt": "Lithuania",
+                "lv": "Latvia",
+                "est": "Estonia"
+            },
             "label": {
                 "changeLanguage": "Select your language",
                 "changeCountry": "Select your country",
-                "changeCurrency": "Select your currency"
+                "changeCurrency": "Select your currency",
+                "textOne": "Find the cheapest and best flight, hotel, cruise for you.",
+                "textTwo": "Displayed currencies may differ from the currencies used to purchase flights. Learn more.Prices are final prices and include all taxes and fees, including payment fees for the cheapest common payment method (which may differ depending on the provider). Additional charges may apply for other types of payment, luggage, meals, WLAN or other additional services. Prices, availability and travel details are without commitment and may be subject to change or to additional conditions. Please check prices and conditions with the service provider before booking.",
+                "terms": "Privacy & Terms",
+                "helpCenter": "Help Center and Consumer Information"
             }
+        },
+        "loginForm": {
+            "title": "Login",
+            "name": "Name",
+            "password": "Password",
+            "rememberBox": "Remember me",
+            "loginButton": "Login"
+        },
+        "registerForm": {
+            "title": "Register",
+            "firstName": "First name",
+            "lastName": "Last name",
+            "email": "Email",
+            "password": "Password",
+            "confirm": "Confirm",
+            "passwordTip": "Use 8 or more characters with a mix of letters, numbers & symbols",
+            "country": "Country",
+            "city": "City",
+            "firstAddress": "First Address",
+            "secondAddress": "Second Address",
+            "acceptTerms": "Accept terms of service",
+            "registerButton": "Register"
+        },
+        "flightItinerary": {
+            "trip": {
+                "round": "Round trip",
+                "oneWay": "One way",
+                "multi": "Multi-city"
+            },
+            "traveler": {
+                "adult": "Adult",
+                "child": "Children",
+                "infant": "Infants",
+                "age": "Aged 2-12",
+                "seat": "In seat",
+                "lap": "On lap",
+                "traveler": " traveler",
+                "travelers": " travelers"
+            },
+            "type": {
+                "economy": "Economy",
+                "premium": "Premium Economy",
+                "business": "Business",
+                "first": "First class"
+            },
+            "departure": {
+                "label": "Where From?",
+                "placeholder": "Where from?"
+            },
+            "destination": {
+                "label": "Where to?"
+            },
+            "searchButton": "Search"
         }
     },
     "lt": {
+        "language": {
+            "en": "English",
+            "lt": "Lietuviu",
+            "ru": "Русский"
+        },
         "nav": {
             "button": {
                 "home": "Pradžia",
                 "exploreMap": "Naršyti žemėlapį",
                 "login": "Prisijungti",
                 "register": "Registruotis"
+            },
+            "sideNav": {
+                "flight": "Ieškoti skrydžių",
+                "hotel": "Ieškoti viešbučių",
+                "cruise": "Ieškoti kruizų",
+                "carHire": "Automobilių nuoma",
+                "map": "Naršyti žemėlapį",
+                "language": "Pakeisti kalbą",
+                "country": "Pakeiskite šalį",
+                "currency": "Keisti valiutą"
             }
         },
         "footer": {
@@ -36,20 +128,97 @@
                 "country": "Šalis",
                 "currency": "Valiuta"
             },
+            "countrySelect": {
+                "lt": "Lietuva",
+                "lv": "Latvia",
+                "est": "Estonia"
+            },
             "label": {
                 "changeLanguage": "Pasirinkite savo kalbą",
                 "changeCountry": "Pasirinkite savo šalį",
-                "changeCurrency": "Pasirinkite savo valiutą"
+                "changeCurrency": "Pasirinkite savo valiutą",
+                "textOne": "Raskite pigiausią ir geriausią skrydį, viešbutį, kruizą.",
+                "textTwo": "Pateiktos valiutos gali skirtis nuo naudojamų įsigyjant skrydžių bilietus. Sužinokite daugiau.Kainos yra galutinės, į jas įtraukti visi mokesčiai ir rinkliavos, įskaitant mokestį už pigiausią įprastinį mokėjimo metodą (jis gali skirtis atsižvelgiant į teikėją). Gali būti taikomi papildomi mokesčiai už kito tipo mokėjimus, bagažą, maitinimą, WLAN ar kitas papildomas paslaugas. Neprisiimame atsakomybės už nurodytas kainas, prieinamumo informaciją ir išsamią kelionės informaciją; ši informacija gali būti keičiama arba gali būti taikomos papildomos sąlygos. Prieš užsakydami bilietus peržiūrėkite paslaugos teikėjo nurodytas kainas ir sąlygas.",
+                "terms": "Privatumas ir sąlygos",
+                "helpCenter": "Pagalbos centras ir informacija klientams"
             }
+        },
+        "loginForm": {
+            "title": "Prisijungti",
+            "name": "Vardas",
+            "password": "Slaptažodis",
+            "rememberBox": "Prisimink mane",
+            "loginButton": "Prisijungti"
+        },
+        "registerForm": {
+            "title": "Registruotis",
+            "firstName": "Vardas",
+            "lastName": "Pavardė",
+            "email": "El. Paštas",
+            "password": "Slaptažodis",
+            "confirm": "Patvirtinti",
+            "passwordTip": "Naudokite 8 ar daugiau simbolių su raidžių, skaičių ir simbolių deriniu",
+            "country": "Šalis",
+            "city": "Miestas",
+            "firstAddress": "Adresas",
+            "secondAddress": "Antras adresas",
+            "acceptTerms": "Priimti paslaugų teikimo sąlygas",
+            "registerButton": "Registruotis"
+        },
+        "flightItinerary": {
+            "trip": {
+                "round": "Į abi puses",
+                "oneWay": "Į vieną pusę",
+                "multi": "Keli miestai"
+            },
+            "traveler": {
+                "adult": "Suaugusieji",
+                "child": " Vaikai",
+                "Infant": "Kūdikiai",
+                "age": "2–12 m. amžiaus",
+                "seat": "sėdynėse",
+                "lap": "ant kelių",
+                "traveler": " keleivis",
+                "travelers": " keleiviai"
+            },
+            "type": {
+                "economy": "Ekonominė klasė",
+                "premium": "Pagerinta ekonominė klasė",
+                "business": "Verslo klasė",
+                "first": "Pirmoji klasė"
+            },
+            "departure": {
+                "label": "Iš kur?",
+                "placeholder": "Iš kur?"
+            },
+            "destination": {
+                "label": "Kur keliausite?"
+            },
+            "searchButton": "Ieškoti"
         }
     },
     "ru": {
+        "language": {
+            "en": "English",
+            "lt": "Lietuviu",
+            "ru": "Русский"
+        },
         "nav": {
             "button": {
                 "home": "Главная",
                 "exploreMap": "Карта",
-                "login": "логин",
-                "register": "зарегистрироваться"
+                "login": "Логин",
+                "register": "Зарегистрироваться"
+            },
+            "sideNav": {
+                "flight": "Поиск рейсов",
+                "hotel": "Поиск отелей",
+                "cruise": "Поиск круизов",
+                "carHire": "Аренда автомобилей",
+                "map": "Карта",
+                "language": "Изменить язык",
+                "country": "Изменить страну",
+                "currency": "Изменить валюту"
             }
         },
         "footer": {
@@ -58,11 +227,75 @@
                 "country": "Страна",
                 "currency": "Валюта"
             },
+            "countrySelect": {
+                "lt": "Литва",
+                "lv": "Латвия",
+                "est": "Эстония"
+            },
             "label": {
                 "changeLanguage": "Выберите ваш язык",
                 "changeCountry": "Выберите свою страну",
-                "changeCurrency": "Выберите вашу валюту"
+                "changeCurrency": "Выберите вашу валюту",
+                "textOne": "Найдите самый дешевый и лучший рейс, отель, круиз.",
+                "textTwo": "Цены не всегда указываются в той валюте, в которой происходит оплата. Подробнее…Цены являются окончательными и включают все налоги и сборы, в том числе комиссию при использовании самого дешевого из широко распространенных способов оплаты. Размер этой комиссии варьируется в зависимости от поставщика услуг. Дополнительные сборы могут взиматься при использовании других способов оплаты, а также за дополнительный багаж, питание, беспроводную сеть и другие услуги. Информация о ценах, наличии билетов и рейсах предоставляется только для ознакомления и может быть изменена. Прежде чем оформлять заказ, проверьте все сведения о цене и условиях на сайте авиакомпании.",
+                "terms" : "Конфиденциальность и Условия использования",
+                "helpCenter": "Справочный центр и информация для клиентов"
+
             }
+        },
+        "loginForm": {
+            "title": "Логин",
+            "name": "Имя",
+            "password": "Пароль",
+            "rememberBox": "Запомни меня",
+            "loginButton": "Логин"
+        },
+        "registerForm": {
+            "title": "Регистрация",
+            "firstName": "Имя",
+            "lastName": "Фамилия",
+            "email": "Эл. адрес",
+            "password": "Пароль",
+            "confirm": "Подтвердить",
+            "passwordTip": "Используйте 8 или более символов с сочетанием букв, цифр и символов",
+            "country": "Страна",
+            "city": "Город",
+            "firstAddress": "Адрес",
+            "secondAddress": "Второй адрес",
+            "acceptTerms": "Принять условия обслуживания",
+            "registerButton": "Регистрироваться"
+        },
+        "flightItinerary": {
+            "trip": {
+                "round": "Туда и обратно",
+                "oneWay": "В одну сторону",
+                "multi": "Сложный маршрут"
+            },
+            "traveler": {
+                "adult": "Взрослые",
+                "child": "Дети",
+                "Infant": "Младенцы",
+                "age": "от 2 до 12 лет",
+                "seat": "с местом",
+                "lap": "без места",
+                "traveler": " пассажир",
+                "travelers": "пассажира",
+                "travelersRu": "пассажиров"
+            },
+            "type": {
+                "economy": "Эконом-класс",
+                "premium": "Премиум эконом-класс",
+                "business": "Бизнес-класс",
+                "first": "Первый класс"
+            },
+            "departure": {
+                "label": "Отсюда?",
+                "placeholder": "Укажите место отправления"
+            },
+            "destination": {
+                "label": "Куда?"
+            },
+            "searchButton": "Поиск"
         }
     }
 }

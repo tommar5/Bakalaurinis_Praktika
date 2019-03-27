@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import language from '../../../../../../translations/translation'
+
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
@@ -91,7 +93,7 @@ class TravelersCount extends Component {
                 size="large"
                 >
                     <Typography variant="subtitle1" style={{paddingRight: 16}}>
-                        {this.state.AllTravelersCount} {this.state.AllTravelersCount > 1 ? 'passangers' : 'passanger'}
+                        {this.state.AllTravelersCount} {this.state.AllTravelersCount > 1 ? language.flightItinerary.traveler.travelers : language.flightItinerary.traveler.traveler }
                         </Typography> <ArrowDropDown />
                 </Button>
                 <Popover
@@ -123,7 +125,7 @@ class TravelersCount extends Component {
                                 alignItems="flex-start"
                                 >
                                     <Grid item xs={12}>
-                                        <Typography variant="h6" className={classes.textDecoration}>Adults</Typography>
+                                        <Typography variant="h6" className={classes.textDecoration}>{language.flightItinerary.traveler.adult}</Typography>
                                     </Grid>
                                 </Grid>
                             </div>
@@ -144,8 +146,8 @@ class TravelersCount extends Component {
                                 alignItems="flex-start"
                                 >
                                     <Grid item xs={12}>
-                                        <Typography variant="h6" className={classes.textDecoration}>Children</Typography>
-                                        <Typography variant="subtitle1">Aged 2-12</Typography>
+                                        <Typography variant="h6" className={classes.textDecoration}>{language.flightItinerary.traveler.child}</Typography>
+                                        <Typography variant="subtitle1">{language.flightItinerary.traveler.age}</Typography>
                                     </Grid>
                                 </Grid>
                             </div>
@@ -166,8 +168,8 @@ class TravelersCount extends Component {
                                 alignItems="flex-start"
                                 >
                                     <Grid item xs={12}>
-                                        <Typography variant="h6" className={classes.textDecoration}>Infants</Typography>
-                                        <Typography variant="subtitle1">In seat</Typography>
+                                        <Typography variant="h6" className={classes.textDecoration}>{language.flightItinerary.traveler.infant}</Typography>
+                                        <Typography variant="subtitle1">{language.flightItinerary.traveler.seat}</Typography>
                                     </Grid>
                                 </Grid>
                             </div>
@@ -188,8 +190,8 @@ class TravelersCount extends Component {
                                 alignItems="flex-start"
                                 >
                                     <Grid item xs={12}>
-                                        <Typography variant="h6" className={classes.textDecoration}>Infants</Typography>
-                                        <Typography variant="subtitle1">On lap</Typography>
+                                        <Typography variant="h6" className={classes.textDecoration}>{language.flightItinerary.traveler.infant}</Typography>
+                                        <Typography variant="subtitle1">{language.flightItinerary.traveler.lap}</Typography>
                                     </Grid>
                                 </Grid>
                             </div>

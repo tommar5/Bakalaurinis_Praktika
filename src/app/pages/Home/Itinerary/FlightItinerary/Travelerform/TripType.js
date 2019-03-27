@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import language from '../../../../../../translations/translation'
+
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
 import List from '@material-ui/core/List'
@@ -16,9 +18,9 @@ const styles = theme => ({
 });
 
 const options = [
-    'Round trip',
-    'One way',
-    'Multi-city',
+    language.flightItinerary.trip.round,
+    language.flightItinerary.trip.oneWay,
+    language.flightItinerary.trip.multi,
 ];
 
 class TripType extends Component {
