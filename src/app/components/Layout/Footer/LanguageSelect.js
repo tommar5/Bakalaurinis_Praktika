@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
-import language from "../../../../translations/translation"
+import language from '../../../../translations/translation'
+import { FooterContext } from '../../../../contexts/FooterContext'
 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
@@ -38,6 +39,7 @@ class LanguageSelect extends Component {
         const { classes } = this.props;
         const { lang } = this.state;
         const NowIsSetLang = language.language;
+        const open = this.context.language.open;
         return (
             <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel
@@ -49,6 +51,7 @@ class LanguageSelect extends Component {
                     </span>
                 </InputLabel>
                 <Select
+                    open={open}
                     value={localStorage.getItem("language")}
                     onChange={this.handleChange}
                     input={
@@ -67,6 +70,8 @@ class LanguageSelect extends Component {
         );
     }
 }
+
+LanguageSelect.contextType = FooterContext;
 
 LanguageSelect.propTypes = {
     classes: PropTypes.object.isRequired,

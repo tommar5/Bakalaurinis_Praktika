@@ -36,7 +36,7 @@ const localeMap = {
     ru: ruLocale,
 };
 
-class DateOfTravel extends Component {
+class DateOfDuration extends Component {
     state = {
         selectedDepartureDate: new Date(),
         selectedArrivalDate: new Date(),
@@ -65,8 +65,8 @@ class DateOfTravel extends Component {
     }
 }
 
-DateOfTravel.propTypes = {
+DateOfDuration.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(DateOfTravel)
+export default withStyles(styles)(DateOfDuration)
