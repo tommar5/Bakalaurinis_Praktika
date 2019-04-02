@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import language from '../../../../translations/translation'
 import FlightItinerary from './FlightItinerary/FlightItinerary'
+import HotelItinerary from './HotelItinerary/HotelItinerary'
 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
@@ -48,7 +49,7 @@ class ItinerarySearch extends Component{
                 <Grid item xs={11} sm={8}>
                     <Card className={classes.card}>
                         <CardContent className={classes.cardContent} style={{paddingBottom: 8}}>
-                            <FlightItinerary />
+                            <HotelItinerary />
                             <Fab
                             variant="extended"
                             size="medium"

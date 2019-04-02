@@ -6,18 +6,31 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
 import Popover from '@material-ui/core/Popover'
 import Typography from '@material-ui/core/Typography'
+import TripOrigin from '@material-ui/icons/TripOrigin'
 
 const styles = theme => ({
     block: {
         display: 'inline-block',
+        width: '100%',
+        color: 'white',
     },
     blockBorderOnClick: {
         outline: 'auto',
+        height: 50,
     },
     blockBorder: {
-        border: '1px solid rgba(0, 0, 0, 0.23)',
-        borderRadius: 0,
+        border: '1px solid rgba(255, 255, 255, 0.23)',
+        borderRadius: 5,
+        height: 50,
     },
+    fieldPlaceholder: {
+        position: 'absolute',
+        margin: 11,
+    },
+    textPlaceholder: {
+        position: 'absolute',
+        margin: 2,
+    }
 });
 
 class Departure extends Component {
@@ -47,7 +60,12 @@ class Departure extends Component {
             <div 
             className={open ? classes.blockBorderOnClick : classes.blockBorder}
             onClick={this.handleClick}>
-                {language.flightItinerary.departure.label}
+                <span className={classes.fieldPlaceholder}>
+                    <TripOrigin />
+                    <span className={classes.textPlaceholder}>
+                        {language.flightItinerary.departure.label}
+                    </span>
+                </span>
             </div>
             <Popover
             id="simple-popper"

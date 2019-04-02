@@ -21,9 +21,10 @@ const styles = theme => ({
 class Home extends Component {
     render() {
         const { classes } = this.props;
+
         return (
             <main>
-                <Grid container direction="column" justify="center" alignItems="stretch" >
+                <Grid container direction="column" justify="center" alignItems="stretch">
                     <Grid item xs={12}>
                         <Header />
                     </Grid>
@@ -32,15 +33,15 @@ class Home extends Component {
                     </Grid>
                     <Grid item xs={12} className={classes.content}>
                        <Grid container direction="row" justify="center" alignItems="stretch" >
-                        <Grid item xs></Grid>
-                            <Grid item xs={4} style={{paddingTop: 15, paddingBottom: 15}}>
+                            <Grid item sm={2}></Grid>
+                            <Grid item xs={12} sm={4} style={{paddingTop: 15, paddingBottom: 15}}>
                                 <TopTravels />
                             </Grid>
-                            <Grid item xs={4} style={{paddingTop: 15, paddingBottom: 15}}>
+                            <Grid item xs={12} sm={4} style={{paddingTop: 15, paddingBottom: 15}}>
                                 <MapShow />
                             </Grid>
-                            <Grid item xs></Grid>
-                        </Grid>
+                            <Grid item sm={2}></Grid>
+                            </Grid>
                     </Grid>
                 </Grid>
             </main>

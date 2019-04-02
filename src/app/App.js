@@ -23,10 +23,10 @@ class App extends Component {
           <Grid xs={12}>
             <NavigationBar/>
           </Grid>
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <Home />
           </Grid>
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <FooterBar />
           </Grid>
         </Grid>
