@@ -95,7 +95,9 @@
             "destination": {
                 "label": "Where to?"
             },
-            "searchButton": "Search"
+            "searchButton": "Search",
+            "countError" : "Sorry, we do not support more than 9 passengers.",
+            "infantError": "You must have at least one adult per two infants."
         }
     },
     "lt": {
@@ -194,7 +196,9 @@
             "destination": {
                 "label": "Kur keliausite?"
             },
-            "searchButton": "Ieškoti"
+            "searchButton": "Ieškoti",
+            "countError" : "Apgailestaujame, bet maksimalus keleivių skaičius yra 9.",
+            "infantError": "Su dviem kūdikiais turi keliauti bent vienas suaugęs asmuo."
         }
     },
     "ru": {
@@ -295,7 +299,9 @@
             "destination": {
                 "label": "Куда?"
             },
-            "searchButton": "Поиск"
+            "searchButton": "Поиск",
+            "countError" : "За один раз можно забронировать не больше 9 билетов.",
+            "infantError": "Двух младенцев должен сопровождать хотя бы один взрослый."
         }
     }
 }

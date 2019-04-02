@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import NavigationBar from './components/Layout/Navbar/Navbar'
-import FooterBar from './components/Layout/Footer/Footer'
+import NavigationBar from './components/Layout/Navbar'
+import FooterBar from './components/Layout/Footer'
 import Home from './pages/Home/Home'
 
 import PropTypes from 'prop-types'
@@ -19,9 +19,7 @@ class App extends Component {
     const {classes} = this.props;
     return (
       <div className="App">
-        <Grid
-        container
-        >
+        <Grid container>
           <Grid xs={12}>
             <NavigationBar/>
           </Grid>
