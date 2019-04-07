@@ -37,27 +37,20 @@ const localeMap = {
 };
 
 class DateOfTravel extends Component {
-    state = {
-        selectedDepartureDate: new Date(),
-        selectedArrivalDate: new Date(),
-    };
-
-    handleDateChange = ( key, date ) => {
-        this.setState({ [key]: date });
-    };
-
     render() {
         const { classes } = this.props;
-        const { selectedDepartureDate, selectedArrivalDate } = this.state;
+        const { departureDate, returnDate } = this.props;
+        const { handleChangeValue } = this.props;
+
         return (
             <MuiPickersUtilsProvider utils={DateFnsUtils} locale={localeMap[localStorage.getItem("language")]}>
                 <Grid container direction="row" justify="space-evenly" alignItems="center" space={0} className={classes.block}>
                     <Grid item xs={12} sm={6}>
-                        <InlineDatePicker value={selectedDepartureDate} onChange={d => this.handleDateChange("selectedDepartureDate", d)} className={classNames(classes.datePicker, classes.datePickercolor)}/>
+                        <InlineDatePicker value={departureDate} onChange={handleChangeValue("departureDate")} className={classes.datePicker}/>
                         <div className={classes.divider}></div>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <InlineDatePicker value={selectedArrivalDate} onChange={d => this.handleDateChange("selectedArrivalDate", d)} className={classes.datePicker} locale={localeMap[localStorage.getItem("language")]}/>
+                        <InlineDatePicker value={returnDate} onChange={handleChangeValue("returnDate")} className={classes.datePicker}/>
                     </Grid>
                 </Grid>
             </MuiPickersUtilsProvider>

@@ -59,31 +59,32 @@ class NavBar extends Component {
 
     SideNav() {
       const { classes } = this.props;
+      const { hadleToDisplayItinerary } = this.props;
       return(
         <div className={classes.list}>
             <List>
                 <Typography variant="h6" color="inherit" className={classes.typography}>
                     <b>Go</b>Travel
                 </Typography>
-                <ListItem button>
+                <ListItem id="flight" button onClick={hadleToDisplayItinerary}>
                     <ListItemIcon>
                         <AirplanemodeActive />
                     </ListItemIcon>
                     <ListItemText primary={language.nav.sideNav.flight} />
                 </ListItem>
-                <ListItem button>
+                <ListItem id="hotel" button onClick={hadleToDisplayItinerary}>
                     <ListItemIcon>
                         <Hotel />
                     </ListItemIcon>
                     <ListItemText primary={language.nav.sideNav.hotel} />
                 </ListItem>
-                <ListItem button>
+                <ListItem id="cruise" button onClick={hadleToDisplayItinerary}>
                     <ListItemIcon>
                         <Cruise />
                     </ListItemIcon>
                     <ListItemText primary={language.nav.sideNav.cruise} />
                 </ListItem>
-                <ListItem button>
+                <ListItem id="car" button onClick={hadleToDisplayItinerary}>
                     <ListItemIcon>
                         <Car />
                     </ListItemIcon>

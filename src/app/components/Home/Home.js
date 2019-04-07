@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 
 import Header from './Header'
-import ItinerarySearch from './Itinerary/ItinerarySearch'
+import ItineraryFlight from './Itinerary/FlightItinerary/FlightItinerary'
+import ItineraryHotel from './Itinerary/HotelItinerary/HotelItinerary'
+import ItineraryCruise from './Itinerary/CruiseItinerary/CruiseItinerary'
+import ItineraryCar from './Itinerary/CarHireItinerary/CarItinerary'
 import TopTravels from './TopTravels'
 import MapShow from './MapShow'
 
@@ -21,7 +24,7 @@ const styles = theme => ({
 class Home extends Component {
     render() {
         const { classes } = this.props;
-
+        const { itinerarySearch } = this.props;
         return (
             <main>
                 <Grid container direction="column" justify="center" alignItems="stretch">
@@ -29,7 +32,10 @@ class Home extends Component {
                         <Header />
                     </Grid>
                     <Grid item xs={12} className={classes.content}>
-                        <ItinerarySearch />
+                        {itinerarySearch == "flight" ? (<ItineraryFlight />) : 
+                         itinerarySearch == "hotel" ? (<ItineraryHotel />) : 
+                         itinerarySearch == "cruise" ? (<ItineraryCruise />) :
+                         itinerarySearch == "car" ? (<ItineraryCar />) : ''}
                     </Grid>
                     <Grid item xs={12} className={classes.content}>
                        <Grid container direction="row" justify="center" alignItems="stretch" >

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import language from '../../../../../../translations/translation'
+import language from '../../../../../translations/translation'
 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
@@ -60,40 +60,23 @@ const styles = theme => ({
 class TravelersCount extends Component {
     state = {
         travelerCountAnchor: null,
-        adultsCount: 1,
-        childrenCount: 0,
-        infantsInSeatCount: 0,
-        infantsOnLapCount: 0,
-        AllTravelersCount: 1,
         error: false,
     }
 
     handleClickTravelerListItem = event => {
         this.setState({ travelerCountAnchor: event.currentTarget });
     };
-    
-    handleAddPassanger = count => event => {
-        this.setState({ [event.currentTarget.id]: count + 1 })
-        this.setState({ AllTravelersCount: this.state.AllTravelersCount + 1 })
-        if (this.state.AllTravelersCount > 9)
-            this.setState({ error: true })
-    }
-
-    handleSubstractPassanger = count => event => {
-        this.setState({ [event.currentTarget.id]: count - 1 })
-        this.setState({ AllTravelersCount: this.state.AllTravelersCount - 1 })
-        if (this.state.AllTravelersCount <= 9)
-            this.setState({ error: false })
-    }
 
     handleCloseTraveler = () => {
-        if (this.state.AllTravelersCount <= 9)
+        if (this.props.AllTravelersCount <= 9)
             this.setState({ travelerCountAnchor: null });
     };
 
     render() {
         const { classes } = this.props;
         const { travelerCountAnchor, error } = this.state;
+        const {adultsCount, childrenCount,  inflantsCount, inflantsOnLapCount, AllTravelersCount} = this.props;
+        const { handleAddPassanger, handleSubstractPassanger } = this.props;
 
         return(
             <div>
@@ -103,7 +86,7 @@ class TravelersCount extends Component {
                 size="large"
                 >
                     <Typography variant="subtitle1" style={{paddingRight: 16}}>
-                        {this.state.AllTravelersCount} {this.state.AllTravelersCount > 1 ? language.flightItinerary.traveler.travelers : language.flightItinerary.traveler.traveler }
+                        {AllTravelersCount} {AllTravelersCount > 1 ? language.flightItinerary.traveler.travelers : language.flightItinerary.traveler.traveler }
                         </Typography> <ArrowDropDown />
                 </Button>
                 <Popover
@@ -139,16 +122,16 @@ class TravelersCount extends Component {
                                     </Grid>
                                 </Grid>
                             </div>
-                            {this.state.adultsCount == 1 ? (
+                            {adultsCount == 1 ? (
                                 <Button disabled variant="contained" color="primary" className={classes.addRemoveButton}><RemoveIcon /></Button>
                             ) : (
-                                <Button id="adultsCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleSubstractPassanger(this.state.adultsCount)}><RemoveIcon /></Button>
+                                <Button id="adultsCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleSubstractPassanger}><RemoveIcon /></Button>
                             )}
-                            {this.state.adultsCount}
-                            {this.state.adultsCount >= 9 ? (
-                                <Button id="adultsCount" disabled variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleAddPassanger(this.state.adultsCount)}><AddIcon /></Button>
+                            {adultsCount}
+                            {adultsCount == 9 ? (
+                                <Button id="adultsCount" disabled variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleAddPassanger}><AddIcon /></Button>
                             ) : (
-                                <Button id="adultsCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleAddPassanger(this.state.adultsCount)}><AddIcon /></Button>
+                                <Button id="adultsCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleAddPassanger}><AddIcon /></Button>
                             )}
                         </Grid>
                         <Grid item xs={12} className={classes.travelerRow}>
@@ -165,16 +148,16 @@ class TravelersCount extends Component {
                                     </Grid>
                                 </Grid>
                             </div>
-                            {this.state.childrenCount == 0 ? (
+                            {childrenCount == 0 ? (
                                 <Button disabled variant="contained" color="primary" className={classes.addRemoveButton}><RemoveIcon /></Button>
                             ) : (
-                                <Button id="childrenCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleSubstractPassanger(this.state.childrenCount)}><RemoveIcon /></Button>
+                                <Button id="childrenCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleSubstractPassanger}><RemoveIcon /></Button>
                             )}
-                            {this.state.childrenCount}
-                            {this.state.childrenCount >= 9 ? (
-                                <Button id="childrenCount" disabled variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleAddPassanger(this.state.childrenCount)}><AddIcon /></Button>
+                            {childrenCount}
+                            {childrenCount == 9 ? (
+                                <Button id="childrenCount" disabled variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleAddPassanger}><AddIcon /></Button>
                             ) : (
-                                <Button id="childrenCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleAddPassanger(this.state.childrenCount)}><AddIcon /></Button>
+                                <Button id="childrenCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleAddPassanger}><AddIcon /></Button>
                             )}
                         </Grid>
                         <Grid item xs={12} className={classes.travelerRow}>
@@ -191,16 +174,16 @@ class TravelersCount extends Component {
                                     </Grid>
                                 </Grid>
                             </div>
-                            {this.state.infantsInSeatCount == 0 ? (
+                            {inflantsCount == 0 ? (
                                 <Button disabled variant="contained" color="primary" className={classes.addRemoveButton}><RemoveIcon /></Button>
                             ) : (
-                                <Button id="infantsInSeatCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleSubstractPassanger(this.state.infantsInSeatCount)}><RemoveIcon /></Button>
+                                <Button id="inflantsCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleSubstractPassanger}><RemoveIcon /></Button>
                             )}
-                            {this.state.infantsInSeatCount}
-                            {this.state.infantsInSeatCount >= 9 ? (
-                                <Button id="infantsInSeatCount" disabled variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleAddPassanger(this.state.infantsInSeatCount)}><AddIcon /></Button>
+                            {inflantsCount}
+                            {inflantsCount == 9 ? (
+                                <Button id="inflantsCount" disabled variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleAddPassanger}><AddIcon /></Button>
                             ) : (
-                                <Button id="infantsInSeatCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleAddPassanger(this.state.infantsInSeatCount)}><AddIcon /></Button>
+                                <Button id="inflantsCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleAddPassanger}><AddIcon /></Button>
                             )}
                         </Grid>
                         <Grid item xs={12} className={classes.travelerRow}>
@@ -217,19 +200,18 @@ class TravelersCount extends Component {
                                     </Grid>
                                 </Grid>
                             </div>
-                            {this.state.infantsOnLapCount == 0 ? (
+                            {inflantsOnLapCount == 0 ? (
                                 <Button disabled variant="contained" color="primary" className={classes.addRemoveButton}><RemoveIcon /></Button>
                             ) : (
-                                <Button id="infantsOnLapCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleSubstractPassanger(this.state.infantsOnLapCount)}><RemoveIcon /></Button>
+                                <Button id="inflantsOnLapCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleSubstractPassanger}><RemoveIcon /></Button>
                             )}
-                            {this.state.infantsOnLapCount}
-                            {this.state.infantsOnLapCount >= 9 ? (
-                                <Button id="infantsOnLapCount" disabled variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleAddPassanger(this.state.infantsOnLapCount)}><AddIcon /></Button>
+                            {inflantsOnLapCount}
+                            {inflantsOnLapCount == 9 ? (
+                                <Button id="inflantsOnLapCount" disabled variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleAddPassanger}><AddIcon /></Button>
                             ) : (
-                                <Button id="infantsOnLapCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={this.handleAddPassanger(this.state.infantsOnLapCount)}><AddIcon /></Button>
+                                <Button id="inflantsOnLapCount" variant="contained" color="primary" className={classes.addRemoveButton} onClick={handleAddPassanger}><AddIcon /></Button>
                             )}
                         </Grid>
-                        {console.log(error)}
                         {error ? (
                             <Typography variant="body2" className={classes.error}>
                                 {language.flightItinerary.countError}

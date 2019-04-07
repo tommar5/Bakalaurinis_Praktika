@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import language from '../../../../../../translations/translation'
+import language from '../../../../../translations/translation'
 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
@@ -17,25 +17,13 @@ const styles = theme =>({
     },
 });
 
-const classTypes = [
-    language.flightItinerary.type.economy,
-    language.flightItinerary.type.premium,
-    language.flightItinerary.type.business,
-    language.flightItinerary.type.first,
-];
-
 class ClassType extends Component {
     state = {
         classTypeAnchor: null,
-        classTypeSelectedIndex: 0,
     }
 
     handleClickClassListItem = event => {
         this.setState({ classTypeAnchor: event.currentTarget });
-    };
-    
-    handleClassMenuItemClick = (event, index) => {
-        this.setState({ classTypeSelectedIndex: index, classTypeAnchor: null });
     };
     
     handleCloseClass = () => {
@@ -44,18 +32,20 @@ class ClassType extends Component {
 
     render() {
         const { classes } = this.props;
-        const { classTypeAnchor, classTypeSelectedIndex } = this.state;
+        const { classTypeAnchor } = this.state;
+        const { flightClass, classTypes } = this.props;
+        const { handleChangeValue } = this.props;
 
         return (
             <div>
                 <List component="nav" className={classes.listPosition}>
                     <ListItem button aria-haspopup="true" aria-controls="class-type-menu" aria-label="Class type" onClick={this.handleClickClassListItem}>
-                        <ListItemText primary={classTypes[classTypeSelectedIndex]} /><ArrowDropDown />
+                        <ListItemText primary={classTypes[flightClass]} /><ArrowDropDown />
                     </ListItem>
                 </List>
                 <Menu id="class-type-menu" anchorEl={classTypeAnchor} open={Boolean(classTypeAnchor)} onClose={this.handleCloseClass} >
                 {classTypes.map((classType, index) => (
-                    <MenuItem key={classType} selected={index === classTypeSelectedIndex} onClick={event => this.handleClassMenuItemClick(event, index)}>
+                    <MenuItem id={index} key={classType} selected={index === flightClass} onClick={handleChangeValue("flightClass")}>
                         {classType}
                     </MenuItem>
                 ))}

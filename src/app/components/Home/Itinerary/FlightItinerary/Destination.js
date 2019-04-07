@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import language from '../../../../../../translations/translation'
+import language from '../../../../../translations/translation'
 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'

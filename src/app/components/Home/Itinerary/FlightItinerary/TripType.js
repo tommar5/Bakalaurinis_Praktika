@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import language from '../../../../../../translations/translation'
+import language from '../../../../../translations/translation'
 
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core'
@@ -17,24 +17,13 @@ const styles = theme => ({
     },
 });
 
-const options = [
-    language.flightItinerary.trip.round,
-    language.flightItinerary.trip.oneWay,
-    language.flightItinerary.trip.multi,
-];
-
 class TripType extends Component {
     state = {
         optionAnchor: null,
-        optionSelectedIndex: 0,
     }
 
     handleClickOptionListItem = event => {
         this.setState({ optionAnchor: event.currentTarget });
-    };
-    
-    handleOptionMenuItemClick = (event, index) => {
-        this.setState({ optionSelectedIndex: index, optionAnchor: null });
     };
     
     handleCloseOption = () => {
@@ -43,18 +32,20 @@ class TripType extends Component {
 
     render() {
         const { classes } = this.props;
-        const { optionAnchor, optionSelectedIndex } = this.state;
+        const { flightType, options } = this.props;
+        const { optionAnchor } = this.state;
+        const { handleChangeValue } = this.props;
 
         return(
             <div>
                 <List component="nav" className={classes.listPosition}>
                     <ListItem button aria-haspopup="true" aria-controls="option-menu" aria-label="Option" onClick={this.handleClickOptionListItem}>
-                        <ListItemText primary={options[optionSelectedIndex]}/><ArrowDropDown />
+                        <ListItemText primary={options[flightType]}/><ArrowDropDown />
                     </ListItem>
                 </List>
                 <Menu id="option-menu" anchorEl={optionAnchor} open={Boolean(optionAnchor)} onClose={this.handleCloseOption} >
                     {options.map((option, index) => (
-                        <MenuItem  key={option} selected={index === optionSelectedIndex} onClick={event => this.handleOptionMenuItemClick(event, index)}>
+                        <MenuItem id={index} key={option} selected={index === flightType} onClick={handleChangeValue("flightType")}>
                             {option}
                         </MenuItem>
                     ))}

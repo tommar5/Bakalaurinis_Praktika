@@ -2,29 +2,29 @@ import React, { Component } from 'react'
 
 import NavigationBar from './components/Layout/Navbar'
 import FooterBar from './components/Layout/Footer'
-import Home from './pages/Home/Home'
+import Home from './components/Home/Home'
 
-import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-  },
-})
-
 class App extends Component {
+  state = {
+    itinerarySearch: "flight",
+  }
+
+  hadleToDisplayItinerary = event => {
+    this.setState({ itinerarySearch: event.currentTarget.id })
+  }
+
   render() {
-    const {classes} = this.props;
+    const { itinerarySearch } = this.state;
     return (
       <div className="App">
         <Grid container>
           <Grid xs={12}>
-            <NavigationBar/>
+            <NavigationBar hadleToDisplayItinerary={this.hadleToDisplayItinerary}/>
           </Grid>
           <Grid item xs={12}>
-            <Home />
+            <Home itinerarySearch={itinerarySearch}/>
           </Grid>
           <Grid item xs={12}>
             <FooterBar />
@@ -35,8 +35,4 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(App);
+export default App;

@@ -98,6 +98,29 @@
             "searchButton": "Search",
             "countError" : "Sorry, we do not support more than 9 passengers.",
             "infantError": "You must have at least one adult per two infants."
+        },
+        "hotelItinerary": {
+            "roomType": {
+                "singleRoom": "",
+                "twinRoom": "",
+                "doubleRoom": ""
+            },
+            "roomClass": {
+                "economy": "",
+                "standart": "",
+                "superior": "",
+                "premium": "",
+                "lux": ""
+            }, 
+            "traveler": {
+                "adult": "Adult",
+                "child": "Children",
+                "room": "Room"
+            },
+            "hotel": {
+                "label": "Where to?"
+            },
+            "searchButton": "Search"
         }
     },
     "lt": {
@@ -199,6 +222,29 @@
             "searchButton": "Ieškoti",
             "countError" : "Apgailestaujame, bet maksimalus keleivių skaičius yra 9.",
             "infantError": "Su dviem kūdikiais turi keliauti bent vienas suaugęs asmuo."
+        },
+        "hotelItinerary": {
+            "roomType": {
+                "singleRoom": "",
+                "twinRoom": "",
+                "doubleRoom": ""
+            },
+            "roomClass": {
+                "economy": "",
+                "standart": "",
+                "superior": "",
+                "premium": "",
+                "lux": ""
+            }, 
+            "traveler": {
+                "adult": "Adult",
+                "child": "Children",
+                "room": "Room"
+            },
+            "hotel": {
+                "label": "Where to?"
+            },
+            "searchButton": "Search"
         }
     },
     "ru": {
@@ -302,6 +348,29 @@
             "searchButton": "Поиск",
             "countError" : "За один раз можно забронировать не больше 9 билетов.",
             "infantError": "Двух младенцев должен сопровождать хотя бы один взрослый."
+        },
+        "hotelItinerary": {
+            "roomType": {
+                "singleRoom": "",
+                "twinRoom": "",
+                "doubleRoom": ""
+            },
+            "roomClass": {
+                "economy": "",
+                "standart": "",
+                "superior": "",
+                "premium": "",
+                "lux": ""
+            }, 
+            "traveler": {
+                "adult": "Adult",
+                "child": "Children",
+                "room": "Room"
+            },
+            "hotel": {
+                "label": "Where to?"
+            },
+            "searchButton": "Search"
         }
     }
 }
